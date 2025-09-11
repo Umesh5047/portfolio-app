@@ -14,7 +14,7 @@ export default function Navbar(){
 return (
 <motion.header initial={{y:-20, opacity:0}} animate={{y:0, opacity:1}} transition={{duration:0.5}} className="backdrop-blur-md bg-black/30 sticky top-0 z-40">
 <div className="container-center flex items-center justify-between h-16">
-<a href="#home" className="font-bold text-xl tracking-tight">YourName</a>
+<a href="#home" className="font-bold text-xl tracking-tight">B.Sai Umesh</a>
 <nav className="hidden md:flex gap-6 items-center">
 {links.map(l=> (
 <a key={l.to} href={l.to} className="text-slate-200 hover:text-white transition">{l.label}</a>
