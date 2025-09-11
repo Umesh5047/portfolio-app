@@ -1,8 +1,12 @@
 import React from 'react'
-{label: 'Home', to: '#home'},
-{label: 'About', to: '#about'},
-{label: 'Projects', to: '#projects'},
-{label: 'Contact', to: '#contact'}
+import { motion } from 'framer-motion'
+
+
+const links = [
+{ label: 'Home', to: '#home' },
+{ label: 'About', to: '#about' },
+{ label: 'Projects', to: '#projects' },
+{ label: 'Contact', to: '#contact' }
 ]
 
 
