@@ -10,7 +10,7 @@ return (
 <h2 className="text-2xl font-bold">Get in touch</h2>
 <p className="text-slate-300 mt-2">I’m open to new opportunities — feel free to reach out!</p>
 <div className="mt-4">
-<p className="text-slate-300">Email: <a href="mailto:youremail@example.com" className="underline">youremail@example.com</a></p>
+<p className="text-slate-300">Email: <a href="mailto:saiumesh2003@gmail.com" className="underline">saiumesh2003@gmail.com</a></p>
 </div>
 </motion.div>
 
