@@ -20,11 +20,11 @@ return (
 <div className="bg-slate-800/60 rounded-2xl p-6 flex flex-col gap-3">
 <div>
 <h3 className="font-semibold">Contact</h3>
-<p className="text-slate-300 text-sm">youremail@example.com</p>
+<p className="text-slate-300 text-sm">saiumesh2003@gmail.com</p>
 </div>
 <div>
-<h3 className="font-semibold">Location</h3>
-<p className="text-slate-300 text-sm">City, Country</p>
+<h3 className="font-semibold">NLB Nagar</h3>
+<p className="text-slate-300 text-sm">Hyderabad, India</p>
 </div>
 <div>
 <h3 className="font-semibold">Available for</h3>
