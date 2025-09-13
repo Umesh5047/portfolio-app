@@ -1,19 +1,17 @@
 import { useParams } from 'react-router-dom'
-import projects from '../sample-data/projects.json'
+import { projects } from '../sample-data/data'
 
 export default function ProjectDetail() {
   const { id } = useParams()
-  const project = projects.find((p) => String(p.id) === id)
+  const project = projects.find((p) => p.id.toString() === id)
 
   if (!project) return <p>Project not found</p>
 
   return (
-    <div>
-      <h2 className="text-2xl font-bold mb-2">{project.title}</h2>
-      <p className="mb-4">{project.description}</p>
-      <a href={project.link} target="_blank" rel="noreferrer" className="text-accent hover:underline">
-        Visit Project →
-      </a>
+    <div className="max-w-2xl mx-auto p-6 bg-white rounded shadow">
+      <h2 className="text-2xl font-bold">{project.title}</h2>
+      <img src={project.image} alt={project.title} className="w-full h-60 object-cover rounded my-4" />
+      <p>{project.description}</p>
     </div>
   )
 }
