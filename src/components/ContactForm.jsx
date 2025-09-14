@@ -1,34 +1,25 @@
-import { useState } from 'react'
+import React, { useState } from 'react';
 
-export default function ContactForm() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+function ContactForm() {
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
 
   const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    const stored = JSON.parse(localStorage.getItem('messages')) || []
-    stored.push(formData)
-    localStorage.setItem('messages', JSON.stringify(stored))
-    setFormData({ name: '', email: '', message: '' })
-    alert('Message saved!')
-  }
+    e.preventDefault();
+    alert('Message sent!');
+  };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 p-4 bg-white rounded-xl shadow">
-      <input type="text" name="name" placeholder="Your Name"
-        value={formData.name} onChange={handleChange}
-        className="w-full border p-2 rounded" />
-      <input type="email" name="email" placeholder="Your Email"
-        value={formData.email} onChange={handleChange}
-        className="w-full border p-2 rounded" />
-      <textarea name="message" placeholder="Your Message"
-        value={formData.message} onChange={handleChange}
-        className="w-full border p-2 rounded" />
-      <button type="submit" className="bg-accent text-white px-4 py-2 rounded">Send</button>
+    <form onSubmit={handleSubmit} className="space-y-2">
+      <input name="name" placeholder="Name" onChange={handleChange} className="border p-2 w-full" />
+      <input name="email" placeholder="Email" onChange={handleChange} className="border p-2 w-full" />
+      <textarea name="message" placeholder="Message" onChange={handleChange} className="border p-2 w-full" />
+      <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">Send</button>
     </form>
-  )
+  );
 }
+
+export default ContactForm;
