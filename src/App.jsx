@@ -8,18 +8,18 @@ import ProjectDetail from './pages/ProjectDetail'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 
-export default function App(){
+export default function App() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white">
       <Navbar />
       <main className="container mx-auto px-4 py-8">
         <Routes>
-          <Route path='/' element={<Home/>} />
-          <Route path='/portfolio' element={<Portfolio/>} />
-          <Route path='/projects' element={<Projects/>} />
-          <Route path='/projects/:id' element={<ProjectDetail/>} />
-          <Route path='/login' element={<Login/>} />
-          <Route path='/signup' element={<Signup/>} />
+          <Route path="/" element={<Home />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:id" element={<ProjectDetail />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
       </main>
     </div>
