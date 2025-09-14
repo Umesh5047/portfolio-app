@@ -1,6 +1,7 @@
 import React from 'react'
 import ProjectCard from '../components/ProjectCard'
-import { projects } from '../data/sampleProjects'
+import { projects } from '../data/sampleProjects.js'
+
 
 export default function Home() {
   return (
