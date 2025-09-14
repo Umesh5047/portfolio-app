@@ -9,4 +9,5 @@ export default function ThemeToggle() {
     if (typeof window !== 'undefined') localStorage.setItem('pa_theme', dark ? 'dark' : 'light')
   }, [dark])
 
-  return <button onClick={() => setDark(!dark)} className="px-2 py-1 bg-accent
+  return <button onClick={() => setDark(!dark)} className="px-2 py-1 bg-accent text-white rounded">{dark ? '🌙' : '☀️'}</button>
+}
