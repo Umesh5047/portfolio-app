@@ -1,25 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
-function ContactForm() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert('Message sent!');
-  };
-
+export default function ContactForm(){
+  const [form,setForm]=useState({name:'',email:'',message:''})
+  const [status,setStatus]=useState(null)
+  const onChange = e => setForm({...form,[e.target.name]: e.target.value})
+  const onSubmit = e => {
+    e.preventDefault()
+    if(!form.name||!form.email||!form.message){ setStatus({error:'Fill all fields'}); return }
+    const msgs = JSON.parse(localStorage.getItem('pa_messages')||'[]')
+    msgs.push({...form,id:Date.now()})
+    localStorage.setItem('pa_messages', JSON.stringify(msgs))
+    setForm({name:'',email:'',message:''})
+    setStatus({ok:'Saved locally'})
+  }
   return (
-    <form onSubmit={handleSubmit} className="space-y-2">
-      <input name="name" placeholder="Name" onChange={handleChange} className="border p-2 w-full" />
-      <input name="email" placeholder="Email" onChange={handleChange} className="border p-2 w-full" />
-      <textarea name="message" placeholder="Message" onChange={handleChange} className="border p-2 w-full" />
-      <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">Send</button>
-    </form>
-  );
+    <div className="bg-white rounded-lg shadow p-4">
+      <h3 className="text-lg font-semibold mb-2">Contact</h3>
+      <form onSubmit={onSubmit} className="space-y-2">
+        <input name="name" value={form.name} onChange={onChange} placeholder="Name" className="w-full border p-2 rounded" />
+        <input name="email" value={form.email} onChange={onChange} placeholder="Email" className="w-full border p-2 rounded" />
+        <textarea name="message" value={form.message} onChange={onChange} placeholder="Message" rows="4" className="w-full border p-2 rounded" />
+        <button type="submit" className="bg-accent text-white px-4 py-2 rounded">Send</button>
+      </form>
+      {status && (status.error ? <div className="text-red-600 mt-2">{status.error}</div> : <div className="text-green-600 mt-2">{status.ok}</div>)}
+    </div>
+  )
 }
-
-export default ContactForm;
