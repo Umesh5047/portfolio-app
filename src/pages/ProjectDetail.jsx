@@ -1,10 +1,9 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { projects } from '../data/sampleProjects.js'
-
-export default function ProjectDetail() {
+import { projects } from '../sample-data/data'
+export default function ProjectDetail(){
   const { id } = useParams()
-  const project = projects.find(p => String(p.id) === id)
+  const project = projects.find(p=> String(p.id)=== id)
   if(!project) return <div>Not found</div>
   return (
     <div className="max-w-3xl mx-auto bg-white rounded-lg shadow p-6">
