@@ -1,13 +1,13 @@
-import ProjectCard from '../components/ProjectCard'
-import { projects } from '../sample-data/data'
+import React from 'react';
+import { projects } from '../sample-data/data';
+import ProjectCard from '../components/ProjectCard';
 
-export default function Portfolio() {
+function Portfolio() {
   return (
-    <div>
-      <h2 className="text-2xl font-bold mb-4">My Projects</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {projects.map((p) => <ProjectCard key={p.id} project={p} />)}
-      </div>
+    <div className="grid gap-4 p-6 sm:grid-cols-2 md:grid-cols-3">
+      {projects.map((p) => <ProjectCard key={p.id} project={p} />)}
     </div>
-  )
+  );
 }
+
+export default Portfolio;
