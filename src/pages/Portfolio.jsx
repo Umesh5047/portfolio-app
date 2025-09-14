@@ -1,13 +1,11 @@
-import React from 'react';
-import { projects } from '../sample-data/data';
-import ProjectCard from '../components/ProjectCard';
-
-function Portfolio() {
+import React from 'react'
+import ContactForm from '../components/ContactForm'
+export default function Portfolio(){
   return (
-    <div className="grid gap-4 p-6 sm:grid-cols-2 md:grid-cols-3">
-      {projects.map((p) => <ProjectCard key={p.id} project={p} />)}
+    <div className="space-y-6">
+      <h2 className="text-2xl font-bold">My Portfolio</h2>
+      <p>This is where portfolio content will go.</p>
+      <ContactForm />
     </div>
-  );
+  )
 }
-
-export default Portfolio;
