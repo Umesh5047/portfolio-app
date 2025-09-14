@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { projects } from '../data/sampleProjects'
+import { projects } from '../data/sampleProjects.js'
 
 export default function ProjectDetail() {
   const { id } = useParams()
