@@ -1,5 +1,5 @@
 import React from 'react'
-import ProjectCard from '../components/ProjectCard'
+import ProjectCard from '../components/ProjectCard.jsx'
 import { projects } from '../data/sampleProjects.js'
 
 
