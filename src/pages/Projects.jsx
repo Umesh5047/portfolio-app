@@ -1,14 +1,12 @@
 import React from 'react'
-import ProjectCard from '../components/ProjectCard.jsx'
-import { projects } from '../data/sampleProjects.js'
-
-
-export default function Projects() {
+import ProjectCard from '../components/ProjectCard'
+import { projects } from '../sample-data/data'
+export default function Projects(){
   return (
-    <div className="p-4">
+    <div>
       <h2 className="text-2xl font-bold mb-4">Projects</h2>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {projects.map(p => <ProjectCard key={p.id} project={p} />)}
+        {projects.map(p=> <ProjectCard key={p.id} project={p} />)}
       </div>
     </div>
   )
