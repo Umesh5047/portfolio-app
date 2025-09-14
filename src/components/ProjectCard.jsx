@@ -1,12 +1,19 @@
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function ProjectCard({ project }) {
+function ProjectCard({ project }) {
   return (
-    <div className="border rounded-lg shadow p-4 bg-white">
-      <img src={project.image} alt={project.title} className="w-full h-40 object-cover rounded" />
-      <h3 className="text-lg font-bold mt-2">{project.title}</h3>
-      <p className="text-sm text-gray-600">{project.description}</p>
-      <Link to={project.link} className="text-accent mt-2 inline-block">View Details</Link>
+    <div className="p-4 border rounded shadow hover:shadow-lg transition">
+      <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+      <p className="mb-3">{project.description}</p>
+      <Link
+        to={project.link}
+        className="text-blue-500 hover:underline"
+      >
+        View Project
+      </Link>
     </div>
-  )
+  );
 }
+
+export default ProjectCard;
