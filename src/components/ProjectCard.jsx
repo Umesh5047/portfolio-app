@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function ProjectCard({ project }) {
-  if (!project) return <div>⚠️ No project data</div>
+export default function ProjectCard({project}){
   return (
     <div className="bg-white rounded-lg shadow p-4 flex flex-col">
       <img src={project.image} alt={project.title} className="w-full h-40 object-cover rounded" />
