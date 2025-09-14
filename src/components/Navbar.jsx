@@ -1,10 +1,11 @@
-import { Link } from 'react-router-dom'
-import ThemeToggle from './ThemeToggle'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 
-export default function Navbar() {
+function Navbar() {
   return (
-    <nav className="flex items-center justify-between p-4 bg-primary text-white">
-      <Link to="/" className="font-bold text-xl">MyPortfolio</Link>
+    <nav className="p-4 bg-white dark:bg-gray-800 shadow flex justify-between items-center">
+      <Link to="/" className="font-bold text-lg">Portfolio</Link>
       <div className="flex gap-4">
         <Link to="/portfolio">Portfolio</Link>
         <Link to="/login">Login</Link>
@@ -12,5 +13,7 @@ export default function Navbar() {
         <ThemeToggle />
       </div>
     </nav>
-  )
+  );
 }
+
+export default Navbar;
