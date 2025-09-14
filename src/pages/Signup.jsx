@@ -8,15 +8,11 @@ export default function Signup() {
   const [form, setForm] = useState({ name: '', email: '', password: '' })
 
   const onChange = e => setForm({ ...form, [e.target.name]: e.target.value })
-
   const onSubmit = e => {
     e.preventDefault()
-    if (!form.name || !form.email || !form.password) {
-      alert('Fill all fields')
-      return
-    }
+    if(!form.name || !form.email || !form.password){ alert('Fill all fields'); return }
     const res = signup(form)
-    if (res.error) alert(res.error)
+    if(res.error) alert(res.error)
     else navigate('/')
   }
 
@@ -24,32 +20,10 @@ export default function Signup() {
     <div className="max-w-md mx-auto bg-white rounded-lg shadow p-6">
       <h2 className="text-xl font-bold mb-4">Sign up</h2>
       <form onSubmit={onSubmit} className="space-y-3">
-        <input
-          name="name"
-          value={form.name}
-          onChange={onChange}
-          placeholder="Full name"
-          className="w-full border p-2 rounded"
-        />
-        <input
-          name="email"
-          type="email"
-          value={form.email}
-          onChange={onChange}
-          placeholder="Email"
-          className="w-full border p-2 rounded"
-        />
-        <input
-          name="password"
-          type="password"
-          value={form.password}
-          onChange={onChange}
-          placeholder="Password"
-          className="w-full border p-2 rounded"
-        />
-        <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
-          Create account
-        </button>
+        <input name="name" value={form.name} onChange={onChange} placeholder="Full name" className="w-full border p-2 rounded" />
+        <input name="email" type="email" value={form.email} onChange={onChange} placeholder="Email" className="w-full border p-2 rounded" />
+        <input name="password" type="password" value={form.password} onChange={onChange} placeholder="Password" className="w-full border p-2 rounded" />
+        <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Create account</button>
       </form>
     </div>
   )
