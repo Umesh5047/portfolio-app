@@ -1,12 +1,12 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import Navbar from './components/Navbar'
-import Home from './pages/Home'
-import Portfolio from './pages/Portfolio'
-import Projects from './pages/Projects'
-import ProjectDetail from './pages/ProjectDetail'
-import Login from './pages/Login'
-import Signup from './pages/Signup'
+import Navbar from './components/Navbar.jsx'
+import Home from './pages/Home.jsx'
+import Portfolio from './pages/Portfolio.jsx'
+import Projects from './pages/Projects.jsx'
+import ProjectDetail from './pages/ProjectDetail.jsx'
+import Login from './pages/Login.jsx'
+import Signup from './pages/Signup.jsx'
 
 export default function App() {
   return (
