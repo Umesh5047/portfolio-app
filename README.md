@@ -1,17 +1,14 @@
-# Portfolio App
+# Portfolio App (Vercel-ready)
 
-React + Vite + Tailwind Portfolio App.
+This project is a React + Vite + Tailwind starter configured to deploy on Vercel.
 
 ## Run locally
-```bash
-npm install
-npm run dev
-```
+1. npm install
+2. npm run dev
 
-## Build for production
-```bash
-npm run build
-npm run preview
-```
+## Build
+1. npm run build
+2. npm run preview
 
-Deploy easily on Vercel or Netlify.
+## Deploy
+Push to GitHub and import repository into Vercel (Framework: Vite). It will detect automatically.
